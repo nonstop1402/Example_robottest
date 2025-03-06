@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20250304 14:04:28.499" rpa="false" schemaversion="4">
+<suite id="s1" name="Example Project" source="D:\TestRobotframework\Example Project">
+<suite id="s1-s1" name="Tests" source="D:\TestRobotframework\Example Project\Tests">
+<suite id="s1-s1-s1" name="DDT2 excel" source="D:\TestRobotframework\Example Project\Tests\DDT2_excel.robot">
+<test id="s1-s1-s1-t1" name="Login With Valid Credentials" line="10">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250304 14:04:30.884" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'.</msg>
+<status status="PASS" starttime="20250304 14:04:30.884" endtime="20250304 14:04:33.772"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250304 14:04:33.774" level="FAIL">Variable '${username}' not found.</msg>
+<status status="FAIL" starttime="20250304 14:04:33.773" endtime="20250304 14:04:33.774"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250304 14:04:33.776" endtime="20250304 14:04:33.776"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250304 14:04:33.777" endtime="20250304 14:04:33.777"/>
+</kw>
+<status status="FAIL" starttime="20250304 14:04:30.881" endtime="20250304 14:04:33.777">Variable '${username}' not found.</status>
+</test>
+<status status="FAIL" starttime="20250304 14:04:28.529" endtime="20250304 14:04:33.780"/>
+</suite>
+<status status="FAIL" starttime="20250304 14:04:28.526" endtime="20250304 14:04:33.782"/>
+</suite>
+<status status="FAIL" starttime="20250304 14:04:28.503" endtime="20250304 14:04:33.784"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Example Project">Example Project</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Example Project.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="DDT2 excel">Example Project.Tests.DDT2 excel</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250304 14:04:30.864" level="ERROR">[ DataDriver ] Error in robot file:
+  File "D:\TestRobotframework\Example Project\Tests\DDT2_excel.robot", line 0</msg>
+<msg timestamp="20250304 14:04:30.864" level="ERROR">In source file:
+  File "D:\TestRobotframework\Example Project\Tests\..\Resources\Logindata.xlsx", line 0</msg>
+<msg timestamp="20250304 14:04:30.881" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
+</errors>
+</robot>
