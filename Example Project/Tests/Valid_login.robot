@@ -2,22 +2,12 @@
 Documentation    ตรวจสอบการล็อกอิน
 
 Library     SeleniumLibrary
-Resource    ../Keywords/Login__keywords.robot
+Resource    ../Keywords/standarduser__keywords.robot
 Test Setup    Set Selenium Speed    0.25
+Suite Setup    Open and maximize browser
+Suite Teardown    Close All Browsers
 
 
 *** Test Cases ***
-Open and maximize browser
-    Open Browser    ${login_page}    ${browser}
-    Maximize Browser Window
-
-Login with Valid username and password
-    Element Should Be Visible    ${username_input}
-    Element Should Be Visible    ${password_input}
-    Element Should Be Enabled    ${login_btn}
-    Fill username    standard_user
-    Fill password    secret_sauce
-    Click Login
-    Page should be inventory
-
-    Close Browser
+Login As Standard User
+    Login With Credentials    standard_user    secret_sauce

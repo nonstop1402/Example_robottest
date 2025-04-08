@@ -2,7 +2,7 @@
 Documentation    ตรวจสอบการล็อกอินกรณีชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
 
 Library     SeleniumLibrary
-Resource    ../Keywords/Login__keywords.robot
+Resource    ../Keywords/standarduser__keywords.robot
 
 Test Template    Invalid Login
 Suite Setup    Open and maximize browser
@@ -22,21 +22,21 @@ ${Error_wrong_user}        Epic sadface: Username and password do not match any 
 
 
 *** Test Cases ***                username            password                Expected
-Right user empty password        ${Valid_user}        ${EMPTY}                ${Error_empty_password}
+Right user empty password        ${Valid_user}        ${EMPTY}               ${Error_empty_password}
 Right user wrong password        ${Valid_user}       ${Invalid_password}     ${Error_wrong_password}
 Wrong user right password        ${Invalid_user}     ${Valid_password}       ${Error_wrong_user}
-Wrong user empty password        ${Invalid_user}     ${EMPTY}                ${Error_empty_password}
+Wrong user empty password        ${Invalid_user}     ${EMPTY}                ${Error_wrong_password}
 Wrong user wrong password        ${Invalid_user}     ${Invalid_password}     ${Error_wrong_user}
 
 
 *** Keywords ***
 Invalid Login
     [Arguments]    ${username}    ${password}    ${expected_error}
-    Clear Element Text    ${password_input}
     Fill username    ${username}
     Fill password    ${password}
+    Sleep    0.5
     Click Login
-
+    Clear Element Text    ${username_input}
     Clear Element Text    ${password_input}
     ${Actual_error}=    Get Text     xpath=//*[@id="login_button_container"]/div/form/div[3]
     Log   Actual Error: "${actual_error}"

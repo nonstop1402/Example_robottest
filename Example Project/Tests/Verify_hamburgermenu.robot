@@ -2,7 +2,7 @@
 Documentation    ตรวจสอบว่าเมนูแสดงขึ้นมาหลังจากคลิกไอคอน ☰
 
 Library     SeleniumLibrary
-Resource    ../Keywords/Login__keywords.robot
+Resource    ../Keywords/standarduser__keywords.robot
 Test Setup    Set Selenium Speed    0.25
 Suite Setup    Open and maximize browser
 
