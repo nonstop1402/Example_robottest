@@ -5,5 +5,3 @@
 - แสดงความรู้พื้นฐานเกี่ยวกับ Robot Framework  
 - แสดงความสามารถในการใช้ SeleniumLibrary สำหรับทดสอบเว็บ  https://www.saucedemo.com/
 
-
-## วิธีรันเทสต์  
